@@ -1,0 +1,74 @@
+$concept-width: 125px;
+$moving-border-width: 150px;
+
+.whoami {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 800px;
+
+
+  &__container {
+    display: flex;
+    width: 770px;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  
+    .description-container {
+      margin: $spacing-large 0 0 $spacing-large;
+    }
+  }
+
+  &__moving-border {
+    width: $moving-border-width;
+    position: relative;
+    @include themed-borders(text);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+    background-position: 0px 0px, 0px #{$moving-border-width * 2}, 0px 0px, $moving-border-width 0px;
+    padding: 1px;
+    animation: border-animation 6s infinite linear;
+    animation-direction: alternate;
+
+    &:hover {
+      animation-duration: 2s;
+    }
+  }
+
+  &__concept {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: $concept-width;
+    height: $concept-width;
+    border-radius: 50%;
+    @include themed(color, background);
+    @include dotted-background(primary, text, 70%, 4px);
+    font-weight: 700;
+    font-size: 25px;
+
+    &--design {
+      top: -#{$concept-width / 2};
+      left: -#{$concept-width / 2};
+    }
+
+    &--coding {
+      bottom: -#{$concept-width / 2};
+      right: -#{$concept-width / 2};
+    }
+  }
+
+  .button {
+    margin: $spacing-large;
+  }
+}
+
+@keyframes border-animation {
+  0% {
+    background-position: 0px 0px, 0px 100%, 0px 0px, $moving-border-width 0px;
+  }
+  100% {
+    background-position: $moving-border-width 0px, $moving-border-width 100%, 0px $moving-border-width, $moving-border-width $moving-border-width;
+  }
+}

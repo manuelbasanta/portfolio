@@ -1,0 +1,55 @@
+$sidebar-padding: $spacing-small;
+
+.sidebar {
+  position: fixed;
+  height: calc(100vh - #{$sidebar-padding} * 2);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: $sidebar-padding;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .link {
+      margin-bottom: $spacing-regular;
+    }
+  }
+
+  &__visible-page {
+    writing-mode: vertical-rl;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    letter-spacing: $spacing-small;
+    animation:none;
+  }
+}
+
+.animate-out {
+  animation: animate-page-out $fast-animation ease;
+}
+
+.animate-in {
+  animation: animate-page-in $fast-animation ease;
+}
+
+@keyframes animate-page-out {
+  0% {
+    letter-spacing: $spacing-xsmall;
+  }
+  100% {
+    letter-spacing: -#{$spacing-xsmall};
+  }
+}
+
+@keyframes animate-page-in {
+  0% {
+    letter-spacing: -#{$spacing-xsmall};
+  }
+  100% {
+    letter-spacing: $spacing-small;
+  }
+}

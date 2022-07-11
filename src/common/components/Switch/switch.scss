@@ -1,0 +1,52 @@
+.common-switch {
+  position: relative;
+  display: inline-block;
+  width: $spacing-xxlarge;
+  height: 34px;
+
+  &__slider {
+    user-select: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include themed(background-color, 'text');
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  &__slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    @include themed(background-color, 'background');
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  &__checkbox { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .common-switch__slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    &:checked + .common-switch__slider {
+      @include themed(background-color, 'text');
+    }
+  }
+}

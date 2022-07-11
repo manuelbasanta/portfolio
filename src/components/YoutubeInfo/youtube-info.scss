@@ -1,0 +1,30 @@
+.youtube-info  {
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  white-space: nowrap;
+  justify-content: space-evenly;
+  overflow: hidden;
+  align-items: center;
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: $spacing-xsmall;
+  }
+
+  &__number {
+    font-weight: 700;
+    font-size: 25px;
+    @include themed(color, primary);  
+  }
+
+  &__data {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

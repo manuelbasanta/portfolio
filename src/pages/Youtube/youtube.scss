@@ -1,0 +1,117 @@
+.youtube {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 725px;
+
+  &__billboard-contaier {
+    display: flex;
+    position: relative;
+
+    &[data-animate="true"] {
+      .youtube__billboard-right {
+        animation: grow-right 2s forwards $speed;
+      }
+      .youtube__billboard-left {
+        animation: grow-left 2s forwards $speed;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    min-width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-repeat: space;
+    @include dotted-background(primary, transparent, 80%, $spacing-small);
+  }
+
+  &__header {
+    @include themed(background-color, background);
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+
+    .copyright {
+      font-size: 40px;
+    }
+  }
+
+  &__description-container {
+    max-width: 500px;
+    height: 100%;
+  }
+
+  &__description {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .link {
+    font-style: italic;
+    @include themed(color, primary);  
+  }
+}
+
+.youtube__billboard {
+  min-width: 250px;
+  min-height: 250px;
+  font-size: 50px;
+  clip-path: polygon(250px 0px, 500px 250px, 500px 500px, 250px 500px, 0px 250px, 0px 0px);
+  @include dotted-background(primary, background, 80%, $spacing-small);
+
+
+  &-content {
+    @include themed(background-color, background);
+    overflow: hidden;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 10px;
+    width: 230px;
+    height: 230px;
+    font-weight: 700;
+    font-size: 45px;
+  }
+
+  &-left {
+    min-width: 125px;
+    min-height: 125px;
+    position: absolute;
+    bottom: 0;
+    right: -160px;
+    @include dotted-background(secondary, background, 80%, $spacing-small);
+  }
+}
+
+@keyframes grow-right {
+  0% {
+    min-width: 250px;
+    min-height: 250px;
+  }
+
+  100% {
+    min-width: 500px;
+    min-height: 500px;
+  }
+}
+
+
+@keyframes grow-left {
+  0% {
+    min-width: 125px;
+    min-height: 125px;
+  }
+
+  100% {
+    min-width: 400px;
+    min-height: 400px;
+  }
+}

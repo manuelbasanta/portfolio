@@ -1,0 +1,25 @@
+.list {
+  font-size: 15px;
+  li {
+    margin-bottom: $spacing-xsmall;
+    list-style-type: '⨳';
+    span {
+      position: relative;
+      left: $spacing-xsmall;
+    }
+  }
+
+  [data-bullet-color="background"] {
+    &::marker {
+      @include themed(color, background);
+    }
+  }
+
+
+  [data-bullet-color="text"] {
+    &::marker {
+      @include themed(color, text);
+    }
+  }
+
+}

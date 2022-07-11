@@ -1,0 +1,17 @@
+.tab-header {
+  font-weight: 900;
+  font-size: 25px;
+  border-radius: $spacing-xxsmall;
+  padding: $spacing-xxsmall;
+  cursor: pointer;
+  @include themed(color, text);
+
+  &[data-selected="true"] {
+    @include themed(color, background);
+    @include dotted-background(secondary, transparent, 80%, 4px);
+  }
+}
+
+.tab-content {
+  padding: $spacing-regular;
+}

@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'themes';
+@import 'fonts';
+@import 'mixins';
+
+// NORMALIZE
+@import './normalize.scss';
+
+// COMMON COMPONENTS
+@import '../components/Button/button.scss';
+@import '../components/Switch/switch.scss';
+@import '../components/Logos/logos.scss';
+@import '../components/Link/link.scss';
+@import '../components/List/list.scss';
+@import '../components/AnimationBlock/animation-block.scss';
+@import '../components/Tabs/tabs.scss';
+
+// COMPONENTS
+@import '../../App.scss';
+@import '../../components/Timeline/timeline.scss';
+@import '../../components/Sidebar/sidebar.scss';
+@import '../../components/Main/main.scss';
+@import '../../components/Title/title.scss';
+@import '../../components/Description/description.scss';
+@import '../../components/YoutubeInfo/youtube-info.scss';
+
+// PAGES
+@import '../../pages/Home/home.scss';
+@import '../../pages/WhoAmI/whoami.scss';
+@import '../../pages/WorkExperience/work-experience.scss';
+@import '../../pages/Youtube/youtube.scss';
+
+// BASIC STYLES
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  @include themed(color, 'text');
+  @include themed(background-color, 'background');
+}

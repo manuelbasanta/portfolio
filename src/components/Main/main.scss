@@ -1,0 +1,9 @@
+.main {
+  &>div {
+    margin: 0 auto;
+    margin-bottom: 150px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+  }
+}

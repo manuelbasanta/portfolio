@@ -1,0 +1,76 @@
+$light:(
+  primary: #f3896f,
+  secondary: #3d5a80,
+  text: #293241,
+  background: #e6e6e6,
+  transparent: #0000
+);
+
+$dark: (
+  primary: #ee886f,
+  secondary: #638bc0,
+  text: #e6e6e6,
+  background: #293241,
+  transparent: #0000
+);
+
+@mixin themed($property, $color) {
+  [data-theme="light"] & {
+    #{$property}: map-get($light, $color);
+  }
+  [data-theme="dark"] & {
+    #{$property}: map-get($dark, $color);
+  }
+}
+
+@mixin themed-border($style, $width, $type, $color) {
+  [data-theme="light"] & {
+    border-#{$style}: $width $type map-get($light, $color) ;
+    border#{$style}: $width $type map-get($light, $color) ;
+  }
+  [data-theme="dark"] & {
+    border-#{$style}: $width $type map-get($dark, $color);
+    border#{$style}: $width $type map-get($dark, $color);
+  }
+}
+
+@mixin themed-dots($color1, $color2, $size) {
+  [data-theme="light"] & {
+    background-image: radial-gradient(
+      map-get($light, $color1) $size, map-get($light, $color2) $size
+    );
+  }
+  [data-theme="dark"] & {
+    background-image: radial-gradient(
+      map-get($dark, $color1) $size, map-get($dark, $color2) $size
+    );
+  }
+}
+
+
+@mixin themed-line($color) {
+  [data-theme="light"] & {
+    background-image: linear-gradient(90deg, transparent 50%, transparent 50%), linear-gradient(90deg, transparent 50%, transparent 50%), linear-gradient(0deg, map-get($light, $color) 50%, transparent 50%);
+  }
+  [data-theme="dark"] & {
+    background-image: linear-gradient(90deg, transparent 50%, transparent 50%), linear-gradient(90deg, transparent 50%, transparent 50%), linear-gradient(0deg, map-get($dark, $color) 50%, transparent 50%);
+  }
+}
+
+@mixin themed-borders($color) {
+  [data-theme="light"] & {
+    background-image: linear-gradient(90deg, map-get($light, $color) 50%, transparent 50%), linear-gradient(90deg, map-get($light, $color) 50%, transparent 50%), linear-gradient(0deg, map-get($light, $color) 50%, transparent 50%), linear-gradient(0deg, map-get($light, $color) 50%, transparent 50%);
+  }
+  [data-theme="dark"] & {
+    background-image: linear-gradient(90deg, map-get($dark, $color) 50%, transparent 50%), linear-gradient(90deg, map-get($dark, $color) 50%, transparent 50%), linear-gradient(0deg, map-get($dark, $color) 50%, transparent 50%), linear-gradient(0deg, map-get($dark, $color) 50%, transparent 50%);
+  }
+}
+
+@mixin themed-gradiant-shadow($angle, $color) {
+  [data-theme="light"] & {
+    background: linear-gradient($angle, map-get($light, $color) 6%, rgba(0,0,0,0) 100%);
+  }
+  [data-theme="dark"] & {
+    background: linear-gradient($angle, map-get($dark, $color) 6%, rgba(0,0,0,0) 100%);
+  }
+}

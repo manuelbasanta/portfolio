@@ -1,0 +1,17 @@
+.button {
+  @include themed(color, text);
+  padding: $spacing-regular;
+  @include themed-border('', 1px, dashed, text);
+  cursor: pointer;
+  width: fit-content;
+  font-size: 15px;
+  font-weight: 900;
+  border-radius: 4px;
+  transition: all .2s;
+
+  &:hover {
+    @include themed(color, background);
+    @include themed(background, text);
+    @include themed-border('', 1px, dashed, background);
+  }
+}

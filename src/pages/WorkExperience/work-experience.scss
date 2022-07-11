@@ -1,0 +1,22 @@
+.work-experience {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  &> div {
+    margin: $spacing-large;
+  }
+
+  .left-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 450px;
+
+    .dots {
+      width: $spacing-xlarge;
+      flex: 1;
+      @include dotted-background(secondary, transparent, 50%, $spacing-xxsmall);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .home-container {
+    .animation-block {
+      bottom: 150px;
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+$ball-width: $spacing-regular;
+$ball-radius: $ball-width / 2;
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    margin: 0 $spacing-xsmall $spacing-xsmall;
+
+    &-text {
+      padding: $spacing-xsmall $spacing-small $spacing-xsmall $spacing-xsmall;
+      margin: $spacing-xsmall 0;
+      max-width: 500px;
+      border-radius: 0 $spacing-xxsmall $spacing-xxsmall $spacing-xxsmall;
+      @include themed(background-color, primary);
+      @include dotted-shadow(secondary);
+    }
+
+    &-header {
+      font-size: 15px;
+      font-weight: 200;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: $spacing-xsmall;
+    }
+
+    &-position {
+      font-weight: 200;
+    }
+  }
+
+  &__step {
+    position: relative;
+    display: flex;
+
+    &:last-of-type {
+      .timeline__ball {
+        &::before{
+          content: '';
+          @include themed-gradiant-shadow(0deg, background);
+          position: absolute;
+          left: 7px;
+          top: 1px;
+          content: '';
+          width: 5px;
+          height: 100%;
+        }
+      }
+    }
+
+    &:first-of-type {
+      .timeline__ball {
+        &::before{
+          content: '';
+          @include themed-gradiant-shadow(180deg, background);
+          position: absolute;
+          left: 7px;
+          top: -50px;
+          content: '';
+          width: 5px;
+          height: 100px;
+          z-index: -1;
+        }
+        &:after{
+          position: absolute;
+          content: '';
+          height: 120%;
+          left: $ball-radius - 1px;
+          top: -50px;
+          z-index: -2;
+        }
+      }
+    }
+  }
+
+  &__ball {
+    min-width: $ball-width;
+    height: $ball-width;
+    border-radius: 50%;
+    @include themed(background-color, secondary);
+  
+    &:after{
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 100%;
+      left: $ball-radius - 1px;
+      top: 1px;
+      z-index: -1;
+      @include themed(background-color, background);
+      @include themed-line(text);
+      background-repeat: repeat-x, repeat-x, repeat-y;
+      background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+      background-position: left top, right bottom, left bottom, right top;
+      animation: line-animation 1s infinite linear;
+    }
+  }
+}
+
+@keyframes line-animation {
+  0% {
+    background-position: left top, right bottom, left bottom, right top;
+  }
+  100% {
+    background-position: left 15px top, right 15px bottom , left bottom 15px , right   top 15px;
+  }
+}

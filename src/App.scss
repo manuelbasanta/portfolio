@@ -1,0 +1,28 @@
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.app-container {
+  display: grid;
+  grid-gap: $spacing-xsmall;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr 1fr;
+  grid-template-columns: 90px 4fr 1fr;
+  grid-template-areas:
+      "sidebar header header"
+      "sidebar main main"
+      "sidebar main main"
+      "sidebar footer footer"
+}

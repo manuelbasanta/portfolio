@@ -1,0 +1,74 @@
+@mixin dotted-moved-background($color1, $color2, $percentage, $size) {
+  & {
+    position: relative;
+    display: inline-block;
+  }
+  &::before {
+    content: '';
+    @include themed-dots( $color1, $color2, $percentage);
+    background-size: $size $size;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    z-index: -1;
+    left: 5%;
+    background-repeat: space;
+  }
+}
+
+@mixin dotted-shadow($color) {
+  & {
+    position: relative;
+  }
+  &::after {
+    content: '';
+    @include dotted-background($color, transparent, 50%, $spacing-xxsmall);
+    border-radius: 0 $spacing-xsmall $spacing-xsmall $spacing-xsmall;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: $spacing-xsmall;
+    top: $spacing-xsmall;
+    z-index: -1;
+    background-repeat: space;
+  }
+}
+
+@mixin dotted-background($color1, $color2, $percentage, $size) {
+  & {
+    @include themed-dots( $color1, $color2, $percentage);
+    background-size: $size $size;
+  }
+}
+
+@mixin dotted-clip($color1, $color2, $percentage, $size) {
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin: $spacing-xxsmall 0;
+  color: transparent;
+  @include themed-dots( $color1, $color2, $percentage);
+  background-size: $size $size;
+}
+
+@mixin shadowed-box {
+  font-size: 20px;
+  padding: $spacing-small;
+  border-radius: $spacing-xxsmall;
+  @include dotted-shadow(secondary);
+  @include themed-border('', 1px, dashed, secondary);
+  @include themed(background-color, background);  
+  margin-bottom: $spacing-regular;
+}
+// TODO: make themed
+@mixin conic-clip($color1, $color2, $percentage, $size) {
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin: $spacing-xxsmall 0;
+  color: transparent;
+  background-image: repeating-conic-gradient(
+    at 0% 100%,
+    #ee6c4d 0deg 5deg,
+    #3d5a80 10deg 15deg
+  );
+}
