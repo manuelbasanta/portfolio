@@ -1,9 +1,18 @@
 .main {
+  overflow: hidden;
   &>div {
     margin: 0 auto;
     margin-bottom: 150px;
-    max-width: 1000px;
+    max-width: $section-container-width;
     display: flex;
     justify-content: center;
+
+    @include tablet-width() {
+      margin-right: $spacing-large;
+      margin-left: $spacing-large;
+      flex-direction: column;
+      align-items: center;
+      max-width: none;
+    }
   }
 }

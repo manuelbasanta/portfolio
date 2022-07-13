@@ -5,6 +5,9 @@
 
   &> div {
     margin: $spacing-large;
+    @include mobile-width() {
+      margin: $spacing-large 0;
+    }
   }
 
   .left-container {
@@ -18,5 +21,10 @@
       flex: 1;
       @include dotted-background(secondary, transparent, 50%, $spacing-xxsmall);
     }
+  }
+
+  @include tablet-width() {
+    flex-direction: column;
+    align-items: center;
   }
 }

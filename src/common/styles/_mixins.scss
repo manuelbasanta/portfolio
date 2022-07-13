@@ -32,7 +32,7 @@
     top: $separation;
     z-index: -1;
     background-repeat: space;
-    transition: all .3s;
+    transition: all $fast-animation;
   }
 }
 
@@ -72,4 +72,16 @@
     #ee6c4d 0deg 5deg,
     #3d5a80 10deg 15deg
   );
+}
+
+@mixin tablet-width() {
+  @media only screen and (max-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mobile-width() {
+  @media only screen and (max-width: $tablet-breakpoint) {
+    @content;
+  }
 }

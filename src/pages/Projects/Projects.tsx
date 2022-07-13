@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { LogoSize } from '../../common/components/Logos/logos-types';
 import GitHubLogo from '../../common/components/Logos/social/GitHubLogo';
 import VimeoLogo from '../../common/components/Logos/social/VimeoLogo';
 import useVisiblePage from '../../common/hooks/useVisiblePage';
@@ -20,6 +21,7 @@ const Projects = () => {
           description='Boilerplate with the basic structure for a web app using React and Typescript.'
           tags={['Typescript', 'SASS', 'React', 'Webpack']}
           image={GitHubLogo}
+          imageSize={LogoSize.XSMALL}
           url={URL.TYPESCRIPT_BOLIERPLATE}
         />
         <Box
@@ -27,6 +29,7 @@ const Projects = () => {
           description='An installation that generates unique art for every interaction using augmented reality.'
           tags={['Javascript', 'A-frame']}
           image={VimeoLogo}
+          imageSize={LogoSize.SMALL}
           url={URL.CATALOGO}
         />
         <Box
@@ -34,6 +37,7 @@ const Projects = () => {
           description='Voting Dapp supported by Ethereum blockchain, supporting Proof of humanity validation for voters.'
           tags={['Solidity', 'Javascript']}
           image={GitHubLogo}
+          imageSize={LogoSize.XSMALL}
           url={URL.HVS}
         />
         <Box
@@ -41,6 +45,7 @@ const Projects = () => {
           description='Github profile containing several projects created for my Youtube channel.'
           tags={['Javascript', 'React']}
           image={GitHubLogo}
+          imageSize={LogoSize.XSMALL}
           url={URL.PROGRAMACION_ACCESIBLE}
         />
         <Box
@@ -48,6 +53,7 @@ const Projects = () => {
           description='This very same website, take a look under the hood.'
           tags={['Typescript', 'React', 'Sass']}
           image={GitHubLogo}
+          imageSize={LogoSize.XSMALL}
           url={URL.PORTFOLIO}
         />
       </div>

@@ -3,9 +3,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 725px;
 
-  &__billboard-contaier {
+  &__billboard-container {
     display: flex;
     position: relative;
     &[data-animate="true"] {
@@ -16,6 +15,10 @@
         animation: grow-left 2s forwards $speed;
       }
     }
+
+    @include tablet-width() {
+      margin-top: $spacing-regular;
+    }
   }
 
   &__billboard-right {
@@ -23,7 +26,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 22px;
       text-align: center;
     }
   }
@@ -68,11 +71,8 @@
   }
 }
 
-.youtube__billboard {
-  min-width: 250px;
-  min-height: 250px;
-  font-size: 50px;
-  clip-path: polygon(250px 0px, 500px 250px, 500px 500px, 250px 500px, 0px 250px, 0px 0px);
+@mixin billboard-animation($billboard-size, $left-position, $font-size) {
+  clip-path: polygon(#{$billboard-size / 2} 0px, $billboard-size #{$billboard-size / 2}, $billboard-size $billboard-size, #{$billboard-size / 2} $billboard-size, 0px #{$billboard-size / 2}, 0px 0px);
   @include dotted-background(primary, background, 80%, $spacing-small);
 
 
@@ -82,10 +82,10 @@
     border-radius: $border-radius;
     padding: 5px;
     margin: 10px;
-    width: 230px;
-    height: 230px;
+    width: #{$billboard-size / 2 - 20px};
+    height: #{$billboard-size / 2 - 20px};
     font-weight: 700;
-    font-size: 45px;
+    font-size: $font-size;
   }
 
   &-left {
@@ -93,32 +93,44 @@
     min-height: 125px;
     position: absolute;
     bottom: 0;
-    right: -160px;
+    right: $left-position;
     @include dotted-background(secondary, background, 80%, $spacing-small);
   }
+
+
+  @keyframes grow-right {
+    0% {
+      min-width: #{$billboard-size / 2};
+      min-height: #{$billboard-size / 2};
+    }
+
+    100% {
+      min-width: $billboard-size;
+      min-height: $billboard-size;
+    }
+  }
+
+
+  @keyframes grow-left {
+    0% {
+      min-width: #{$billboard-size / 2 - 100px};
+      min-height: #{$billboard-size / 2 - 100px};
+    }
+
+    100% {
+      min-width: #{$billboard-size - 100px};
+      min-height:  #{$billboard-size - 100px};
+    }
+  }
 }
 
-@keyframes grow-right {
-  0% {
-    min-width: 250px;
-    min-height: 250px;
-  }
 
-  100% {
-    min-width: 500px;
-    min-height: 500px;
-  }
-}
-
-
-@keyframes grow-left {
-  0% {
-    min-width: 125px;
-    min-height: 125px;
-  }
-
-  100% {
-    min-width: 400px;
-    min-height: 400px;
+.youtube__billboard {
+  min-width: 250px;
+  min-height: 250px;
+  font-size: 50px;
+  @include billboard-animation(500px, -160px, 22px);
+  @include mobile-width {
+    @include billboard-animation(350px, -80px, 15px);
   }
 }

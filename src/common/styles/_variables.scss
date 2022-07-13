@@ -1,11 +1,3 @@
-// PALETTE
-$orange: #ee6c4d;
-$blue: #3d5a80;
-$light-blue: #98c1d9;
-$light: #fff;
-$dark: #293241;
-
-
 // ANIMATIONS
 $fast-animation: .2s;
 $normal-animation: .5s;
@@ -21,6 +13,11 @@ $spacing-regular: 20px;
 $spacing-large: 30px;
 $spacing-xlarge: 40px;
 $spacing-xxlarge: 60px;
+$section-container-width: 1000px;
 
 // BORDER
 $border-radius: 4px;
+
+// MEDIA SIZES
+$desktop-breakpoint: 1165px;
+$tablet-breakpoint: 600px;

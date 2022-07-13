@@ -18,11 +18,11 @@
   display: grid;
   grid-gap: $spacing-xsmall;
   min-height: 100vh;
-  grid-template-rows: auto 1fr 1fr;
-  grid-template-columns: 90px 4fr 1fr;
+  grid-template-rows: auto;
+  grid-template-columns: 4fr 1fr;
   grid-template-areas:
-      "sidebar header header"
-      "sidebar main main"
-      "sidebar main main"
-      "sidebar footer footer"
+      "header header"
+      "main main"
+      "main main"
+      "footer footer"
 }

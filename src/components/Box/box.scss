@@ -10,7 +10,7 @@
     @include themed(background-color, background);
     @include themed-border('', 1px, dashed, primary);
     margin: $spacing-regular;
-    transition: all .3s;
+    transition: all $fast-animation;
     padding: $spacing-regular;
     display: flex;
     flex-direction: column;

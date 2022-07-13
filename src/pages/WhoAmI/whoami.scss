@@ -7,7 +7,6 @@ $moving-border-width: 150px;
   margin: 0 auto;
   max-width: 800px;
 
-
   &__container {
     display: flex;
     width: 770px;
@@ -25,21 +24,45 @@ $moving-border-width: 150px;
     b {
       @include themed(color, primary);
     }
+
+    @include tablet-width() {
+      text-align: center;
+      width: auto;
+
+      .link {
+        margin: 0 auto;
+      }
+    }
+
+
   }
 
   &__moving-border {
-    width: $moving-border-width;
+    width: 0px;
+    max-height: 0px;
     position: relative;
     @include themed-borders(text);
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
     background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
-    background-position: 0px 0px, 0px #{$moving-border-width * 2}, 0px 0px, $moving-border-width 0px;
-    padding: 1px;
-    animation: border-animation 6s infinite linear;
+
+    padding: 1px 0 1px 1px;
+   
+    &[data-animate="true"] {
+      animation: initial-border-animation 1.5s $speed forwards, border-animation 1.5s 1.5s $speed infinite;
+
+      @include tablet-width() {
+        animation: initial-border-animation-small 1.5s $speed forwards, border-animation 1.5s 1.5s $speed infinite;
+      }
+    }
     animation-direction: alternate;
 
     &:hover {
-      animation-duration: 2s;
+      animation-duration: .5s;
+    }
+
+    @include tablet-width() {
+      margin-top: 80px;
+      background-size: 15px 1px, 15px 0px, 0px 15px, 0px 15px;
     }
   }
 
@@ -66,6 +89,9 @@ $moving-border-width: 150px;
     }
   }
 
+  @include tablet-width() {
+    margin-bottom: $spacing-large;
+  }
 }
 
 @keyframes border-animation {
@@ -74,5 +100,28 @@ $moving-border-width: 150px;
   }
   100% {
     background-position: $moving-border-width 0px, $moving-border-width 100%, 0px $moving-border-width, $moving-border-width $moving-border-width;
+  }
+}
+
+
+@keyframes initial-border-animation {
+  0% {
+    background-position: 0px 0px, 0px 100%, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: $moving-border-width 0px, $moving-border-width 100%, 0px $moving-border-width, $moving-border-width $moving-border-width;
+    width: $moving-border-width;
+    max-height: 500px
+  }
+}
+
+@keyframes initial-border-animation-small {
+  0% {
+    background-position: 0px 0px, 0px 100%, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: $moving-border-width 0px, $moving-border-width 100%, 0px $moving-border-width, $moving-border-width $moving-border-width;
+    width: calc(100% - #{$concept-width});
+    max-height: 500px
   }
 }

@@ -26,6 +26,10 @@ $sidebar-padding: $spacing-small;
     letter-spacing: $spacing-small;
     animation:none;
   }
+
+  @include tablet-width() {
+    display: none;
+  }
 }
 
 .animate-out {

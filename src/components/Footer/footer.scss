@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    font-weight: 200;
+    flex-direction: column;
+    align-items: center;
+    width: $section-container-width;
+    max-width: $section-container-width;
+    border-top: 1px dashed;
+
+    @include tablet-width() {
+      width: 100%;
+      max-width: none;
+    }
+  }
+  .palette {
+    margin-top: $spacing-small;
+  }
+}

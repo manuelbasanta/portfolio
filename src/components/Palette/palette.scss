@@ -1,0 +1,20 @@
+.palette {
+  display: flex;
+
+  &>div {
+    width: $spacing-xlarge;
+    height: $spacing-regular;
+  }
+  .primary {
+    @include themed(background-color, primary);
+  }
+  .secondary {
+    @include themed(background-color, secondary);
+  }
+  .text {
+    @include themed(background-color, text);
+  }
+  .background {
+    @include themed(background-color, background);
+  }
+}

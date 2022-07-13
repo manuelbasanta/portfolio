@@ -11,4 +11,11 @@
     font-weight: 600;
     @include dotted-clip(primary, transparent, 70%, 3px);
   }
+
+  @include mobile-width() {
+    font-size: 55px;
+    &__sub-title {
+      font-size: 25px;
+    }
+  }
 }

@@ -41,7 +41,7 @@ const YouTube = () => {
           <Button label='Visit my Youtube channel' />
         </Link>
       </div>
-      <div ref={animationRef} className='youtube__billboard-contaier' data-animate={animationEntry?.isIntersecting}>
+      <div ref={animationRef} className='youtube__billboard-container' data-animate={animationEntry?.isIntersecting}>
         <div className='youtube__billboard youtube__billboard-right'>
           <div className='youtube__billboard-content'>Programación Accesible ©</div>
         </div>
