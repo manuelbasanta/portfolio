@@ -12,9 +12,10 @@ $ball-radius: $ball-width / 2;
       padding: $spacing-xsmall $spacing-small $spacing-xsmall $spacing-xsmall;
       margin: $spacing-xsmall 0;
       max-width: 500px;
-      border-radius: 0 $spacing-xxsmall $spacing-xxsmall $spacing-xxsmall;
-      @include themed(background-color, primary);
-      @include dotted-shadow(secondary);
+      border-radius: 0 $border-radius $border-radius $border-radius;
+      @include themed-border('', 1px, dashed, primary);
+      @include themed(background-color, background);
+      @include dotted-shadow(primary, $spacing-xsmall);
     }
 
     &-header {

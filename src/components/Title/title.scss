@@ -4,11 +4,11 @@
   text-transform: uppercase;
   margin: 0;
   @include dotted-moved-background(secondary, transparent, 50%, 6px);
-}
 
-.sub-title {
-  margin: 0;
-  font-size: 40px;
-  font-weight: 600;
-  @include dotted-clip(primary, transparent, 70%, 3px);
+  &__sub-title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+    @include dotted-clip(primary, transparent, 70%, 3px);
+  }
 }

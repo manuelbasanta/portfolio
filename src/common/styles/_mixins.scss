@@ -17,21 +17,22 @@
   }
 }
 
-@mixin dotted-shadow($color) {
+@mixin dotted-shadow($color, $separation) {
   & {
     position: relative;
   }
   &::after {
     content: '';
     @include dotted-background($color, transparent, 50%, $spacing-xxsmall);
-    border-radius: 0 $spacing-xsmall $spacing-xsmall $spacing-xsmall;
+    border-radius: 0 $border-radius $border-radius $border-radius;
     height: 100%;
     width: 100%;
     position: absolute;
-    left: $spacing-xsmall;
-    top: $spacing-xsmall;
+    left: $separation;
+    top: $separation;
     z-index: -1;
     background-repeat: space;
+    transition: all .3s;
   }
 }
 
@@ -54,7 +55,7 @@
 @mixin shadowed-box {
   font-size: 20px;
   padding: $spacing-small;
-  border-radius: $spacing-xxsmall;
+  border-radius: $border-radius;
   @include dotted-shadow(secondary);
   @include themed-border('', 1px, dashed, secondary);
   @include themed(background-color, background);  

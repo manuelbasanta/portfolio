@@ -13,10 +13,17 @@ $moving-border-width: 150px;
     width: 770px;
     flex-direction: column;
     margin-right: 20px;
-    margin-bottom: 20px;
-  
-    .description-container {
-      margin: $spacing-large 0 0 $spacing-large;
+
+    .title__sub-title {
+      margin-bottom: $spacing-regular;
+    }
+
+    p:last-of-type {
+      margin-bottom: $spacing-xlarge;
+    }
+
+    b {
+      @include themed(color, primary);
     }
   }
 
@@ -59,9 +66,6 @@ $moving-border-width: 150px;
     }
   }
 
-  .button {
-    margin: $spacing-large;
-  }
 }
 
 @keyframes border-animation {

@@ -8,7 +8,6 @@
   &__billboard-contaier {
     display: flex;
     position: relative;
-
     &[data-animate="true"] {
       .youtube__billboard-right {
         animation: grow-right 2s forwards $speed;
@@ -16,6 +15,16 @@
       .youtube__billboard-left {
         animation: grow-left 2s forwards $speed;
       }
+    }
+  }
+
+  &__billboard-right {
+    .youtube__billboard-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-align: center;
     }
   }
 
@@ -49,10 +58,8 @@
     height: 100%;
   }
 
-  &__description {
-    margin-top: 40px;
-    font-weight: 600;
-    font-size: 18px;
+  &__description:first-of-type {
+    margin-top: $spacing-xlarge;
   }
 
   .link {
@@ -72,7 +79,7 @@
   &-content {
     @include themed(background-color, background);
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: $border-radius;
     padding: 5px;
     margin: 10px;
     width: 230px;

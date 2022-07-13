@@ -3,6 +3,7 @@ export enum Page {
   EXPERIENCE = 'EXPERIENCE',
   YOUTUBE = 'YOUTUBE',
   WHOAMI = 'ABOUT ME',
+  PROJECTS = 'PROJECTS',
 }
 
 export type PageVisibility = {
@@ -15,4 +16,5 @@ export type VisiblePageState = {
   EXPERIENCE: number;
   YOUTUBE: number;
   WHOAMI: number;
+  PROJECTS: number;
 };

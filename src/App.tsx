@@ -8,6 +8,7 @@ import WorkExperience from './pages/WorkExperience/WorkExperience';
 import Home from './pages/Home/Home';
 import Youtube from './pages/Youtube/Youtube';
 import WhoAmI from './pages/WhoAmI/WhoAmI';
+import Projects from './pages/Projects/Projects';
 
 const App = () => (
   <div className='app-container'>
@@ -17,6 +18,7 @@ const App = () => (
       <WhoAmI />
       <WorkExperience />
       <Youtube />
+      <Projects />
     </Main>
     <Sidebar />
     <Footer />

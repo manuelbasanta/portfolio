@@ -30,17 +30,20 @@ const YouTube = () => {
   return (
     <div ref={ref} className='youtube'>
       <div className='youtube__description-container'>
-        <Title title='Programación Accesible' />
-        <h2 className='youtube__description'>
-          On my Youtube channel <Link href={URL.YOUTUBE}>Programación Accesible</Link> I share  what I know about frontend coding and design (in Spanish). Wanna have a look?
-        </h2>
+        <Title title='My Youtube channel' />
+        <p className='youtube__description'>
+          On my Youtube channel <b><Link href={URL.YOUTUBE}>Programación Accesible</Link></b> I share  what I know about <b>frontend, coding and design</b> (in Spanish).
+        </p>
+        <p className='youtube__description'>
+          It&apos;s a place where I can <b>help</b> others while I also <b>learn</b> new stuff and get to practice what I already know. Wanna have a look?
+        </p>
         <Link href={URL.YOUTUBE} type={LinkTypes.BUTTON}>
           <Button label='Visit my Youtube channel' />
         </Link>
       </div>
       <div ref={animationRef} className='youtube__billboard-contaier' data-animate={animationEntry?.isIntersecting}>
         <div className='youtube__billboard youtube__billboard-right'>
-          <div className='youtube__billboard-content'>My Youtube<span className='copyright'>©</span> channel</div>
+          <div className='youtube__billboard-content'>Programación Accesible ©</div>
         </div>
         {youtubeData.loaded && (
           <div className='youtube__billboard youtube__billboard-left'>

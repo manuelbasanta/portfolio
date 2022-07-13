@@ -6,6 +6,7 @@ const initialState: VisiblePageState = {
   EXPERIENCE: 0,
   YOUTUBE: 0,
   WHOAMI: 0,
+  PROJECTS: 0,
 };
 
 const visiblePageReducer = createSlice({

@@ -1,0 +1,48 @@
+.box {
+  &__container {
+    left: 0;
+    top: 0px;
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: $border-radius;
+    @include dotted-shadow(primary, 0px);
+    @include themed(background-color, background);
+    @include themed-border('', 1px, dashed, primary);
+    margin: $spacing-regular;
+    transition: all .3s;
+    padding: $spacing-regular;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    &:hover {
+      left: -2px;
+      top: -2px;
+      @include dotted-shadow(primary, $spacing-xsmall);
+    }
+  
+
+    .logo {
+      float: right;
+    }
+  }
+
+  &__tags {
+    display: flex;
+  }
+
+  &__tag {
+    font-size: 10px;
+    margin-left: $spacing-xsmall;
+    @include themed(color, primary);
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    font-weight: 800;
+  }
+}

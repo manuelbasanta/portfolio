@@ -11,7 +11,7 @@
 
   [data-bullet-color="background"] {
     &::marker {
-      @include themed(color, background);
+      @include themed(color, secondary);
     }
   }
 

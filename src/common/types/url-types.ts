@@ -6,6 +6,11 @@ enum URL {
   GCBA = 'https://www.buenosaires.gob.ar',
   KOYFIN = 'https://www.koyfin.com',
   MAIL = 'manuelbasanta1@gmail.com',
+  TYPESCRIPT_BOLIERPLATE = 'https://github.com/manuelbasanta/react-typescript-bolierplate',
+  CATALOGO = 'https://vimeo.com/317810816',
+  HVS = 'https://github.com/manuelbasanta/HumanVotingSystem',
+  PROGRAMACION_ACCESIBLE = 'https://github.com/accesibleprogramacion',
+  PORTFOLIO = 'https://github.com/manuelbasanta/manuelbasanta.github.com',
 }
 
 export default URL;
