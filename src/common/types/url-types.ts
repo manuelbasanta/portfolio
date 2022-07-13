@@ -10,7 +10,7 @@ enum URL {
   CATALOGO = 'https://vimeo.com/317810816',
   HVS = 'https://github.com/manuelbasanta/HumanVotingSystem',
   PROGRAMACION_ACCESIBLE = 'https://github.com/accesibleprogramacion',
-  PORTFOLIO = 'https://github.com/manuelbasanta/manuelbasanta.github.com',
+  PORTFOLIO = 'https://github.com/manuelbasanta/portfolio',
 }
 
 export default URL;
