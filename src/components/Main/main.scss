@@ -6,6 +6,7 @@
     max-width: $section-container-width;
     display: flex;
     justify-content: center;
+    min-height: 75vh;
 
     @include tablet-width() {
       margin-right: $spacing-large;
