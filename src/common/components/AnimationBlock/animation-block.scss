@@ -9,7 +9,7 @@
     height: 100%;
     position: absolute;
     width: 0px;
-    animation: movement 4s $speed;
+    animation: movement 4s $speed forwards;
     @include dotted-background(text, transparent, 60%, 4px);
     @include themed(color, background);
     font-weight: 900;
