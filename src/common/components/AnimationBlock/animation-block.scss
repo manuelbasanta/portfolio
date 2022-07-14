@@ -6,8 +6,7 @@
   overflow: hidden;
 
   @include mobile-width() {
-    width: 150px;
-    height: 30px;
+    display: none;
   }
 
   &__animation {
@@ -19,10 +18,6 @@
     @include themed(color, background);
     font-weight: 900;
     font-size: 40px;
-    @include mobile-width() {
-      animation: movement-small 4s $speed forwards;
-      font-size: 30px;
-    }
   }
 
   &::after {
@@ -42,22 +37,6 @@
   }
   50% {
     width: 250px;
-    right: 0;
-  }
-  100% {
-    width: 0px;
-    right: 0;
-    display: none;
-  }
-}
-
-@keyframes movement-small {
-  0% {
-    width: 0px;
-    left: 0;
-  }
-  50% {
-    width: 150px;
     right: 0;
   }
   100% {
