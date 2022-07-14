@@ -24,7 +24,7 @@ const WhoAmI = () => {
           I&apos;ve worked in many diferent positions, in huge corporations and in small companies but my goal has always been the same: to bridge the gap between <b>code</b> and <b>design</b>. If this site got your attention then feel free to contact me.
         </p>
         <Link href='mailto:manuelbasanta1@gmail.com' type={LinkTypes.BUTTON}>
-          <Button label='Contanct me!' />
+          <Button label='Contact me!' />
         </Link>
       </div>
       <div className='whoami__moving-border' data-animate={animationEntry?.isIntersecting}>
