@@ -41,6 +41,14 @@ const Projects = () => {
           url={URL.HVS}
         />
         <Box
+          title='Blockchain Deals'
+          description='Exchange goods or sevices safely, with friends or complete extrangers, backed by the blockchain.'
+          tags={['Solidity', 'Javascript', 'Next.js']}
+          image={GitHubLogo}
+          imageSize={LogoSize.XSMALL}
+          url={URL.BLOCKCHAIN_DEALS}
+        />
+        <Box
           title='Programación Accesible'
           description='Github profile containing several projects created for my Youtube channel.'
           tags={['Javascript', 'React']}

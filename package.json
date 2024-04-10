@@ -1,7 +1,7 @@
 {
-  "name": "react-ts-boilerplate",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "Codebase for modern React app using Typescript",
+  "description": "Manuel Basant's website",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode=development",

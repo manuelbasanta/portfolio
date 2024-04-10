@@ -11,6 +11,7 @@ enum URL {
   HVS = 'https://github.com/manuelbasanta/HumanVotingSystem',
   PROGRAMACION_ACCESIBLE = 'https://github.com/accesibleprogramacion',
   PORTFOLIO = 'https://github.com/manuelbasanta/portfolio',
+  BLOCKCHAIN_DEALS = 'https://blockchaindeals.vercel.app/',
 }
 
 export default URL;
